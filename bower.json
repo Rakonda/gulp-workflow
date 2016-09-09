@@ -1,21 +1,17 @@
 {
-  "name": "gulp-bower-example",
-  "version": "0.0.1",
+  "name": "gulp-workflow",
+  "version": "0.1",
   "authors": [
-    "Davey Shafik <davey@engineyard.comm>"
+    "Badr largab"
   ],
-  "main": "public/index.php",
+  "main": "",
   "license": "Apache 2.0",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
-    "bootstrap": "~3.1.1"
   }
 }
