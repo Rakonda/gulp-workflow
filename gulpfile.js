@@ -118,10 +118,10 @@ gulp.task('less', function() {
 
 gulp.task('autoprefixer', function() {
     gulp.src('./frontend/css/global.css')
-        .pipe(autoprefixer())
+        .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('./frontend/css'))
     gulp.src('./frontend/css/global-rtl.css')
-        .pipe(autoprefixer())
+        .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('./frontend/css'))
         .pipe(refresh())
 });
