@@ -46,6 +46,8 @@ gulp.task('less-task', function() {
         .pipe(changed('./src/less/', {extension: '.less'}))
         .pipe(less())
         .pipe(autoprefixer({ browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'] }))
+        .pipe(polyfill())
+		.pipe(minifyCss())
         .pipe(gulp.dest('./src/css'))
         .pipe(refresh())
         .pipe(debug({ title: 'Debug :' }))
@@ -99,7 +101,6 @@ gulp.task('autoprefixer', function() {
     gulp.src('./frontend/css/global-rtl.css')
         .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('./frontend/css'))
->>>>>>> origin/dev
         .pipe(refresh())
         .pipe(debug({ title: 'Debug :' }))
         .on('error', notify.onError("Error: <%= error.message %>"));
