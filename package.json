@@ -1,19 +1,33 @@
 {
   "name": "gulp-workflow",
   "version": "0.0.1",
+<<<<<<< HEAD
   "description": "Sample example of how gulp works",
+=======
+  "description": "",
+  "main": "",
+>>>>>>> origin/dev
   "dependencies": {
     "bower": "~1.3.5",
     "gulp-less": "^3.1.0",
     "gulp-open": "^2.0.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
+=======
+    "browser-sync": "^2.16.0",
+>>>>>>> origin/dev
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-changed": "^1.3.2",
     "gulp-connect": "^3.1.0",
+<<<<<<< HEAD
     "gulp-debug": "^2.1.2",
     "gulp-imagemin": "^3.0.3",
+=======
+    "gulp-exec": "^2.1.2",
+    "gulp-header": "^1.0.2",
+>>>>>>> origin/dev
     "gulp-livereload": "^3.8.1",
     "gulp-minify-css": "^0.3.4",
     "gulp-notify": "^2.2.0",

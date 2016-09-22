@@ -71,10 +71,35 @@ gulp.task('image-task', function() {
         .on('error', notify.onError("Error: <%= error.message %>"));
 });
 
+<<<<<<< HEAD
 gulp.task('html-task', function() {
     gulp.src('./src/*.html')
         .pipe(changed('./src/', {extension: '.html'}))
         .pipe(gulp.dest('./src/'))
+=======
+gulp.task('css', function() {
+    gulp.src(paths.css)
+        .pipe(refresh())
+});
+
+gulp.task('less', function() {
+    gulp.src('./frontend/css/global.less')
+        .pipe(less())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('./frontend/css'))
+        .pipe(exec('lessc --rtl ./frontend/css/global.less ./frontend/css/global-rtl.css', options))
+        .pipe(exec.reporter(reportOptions))
+        // .pipe(refresh())
+});
+
+gulp.task('autoprefixer', function() {
+    gulp.src('./frontend/css/global.css')
+        .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('./frontend/css'))
+    gulp.src('./frontend/css/global-rtl.css')
+        .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('./frontend/css'))
+>>>>>>> origin/dev
         .pipe(refresh())
         .pipe(debug({ title: 'Debug :' }))
         .on('error', notify.onError("Error: <%= error.message %>"));
