@@ -1,33 +1,29 @@
 {
-  "name": "gulp-bower-example",
+  "name": "gulp-workflow",
   "version": "0.0.1",
-  "description": "",
-  "main": "public/index.php",
+  "description": "Sample example of how gulp works",
   "dependencies": {
     "bower": "~1.3.5",
     "gulp-less": "^3.1.0",
     "gulp-open": "^2.0.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.6.0",
+    "gulp-changed": "^1.3.2",
     "gulp-connect": "^3.1.0",
-    "gulp-header": "^1.0.2",
+    "gulp-debug": "^2.1.2",
+    "gulp-imagemin": "^3.0.3",
     "gulp-livereload": "^3.8.1",
     "gulp-minify-css": "^0.3.4",
+    "gulp-notify": "^2.2.0",
     "gulp-refresh": "^1.1.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-replace": "^0.3.0",
-    "gulp-rimraf": "^0.1.0",
     "gulp-uglify": "^0.3.0",
-    "gulp-usemin": "^0.3.5",
-    "gulp-watch": "^4.3.5"
+    "gulp-util": "^3.0.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Davey Shafik <davey@engineyard.com>",
+  "author": "Badr largab",
   "license": "Apache 2.0"
 }
