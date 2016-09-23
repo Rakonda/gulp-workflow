@@ -9,6 +9,8 @@ const notify        = require("gulp-notify");
 const debug         = require('gulp-debug');
 const imagemin      = require('gulp-imagemin');
 const autoprefixer  = require('gulp-autoprefixer');
+const cssmin        = require('gulp-cssmin');
+const myth          = require('gulp-myth');
 
 
 const baseRoot      = "./src";
@@ -46,8 +48,8 @@ gulp.task('less-task', function() {
         .pipe(changed('./src/less/', {extension: '.less'}))
         .pipe(less())
         .pipe(autoprefixer({ browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'] }))
-        .pipe(polyfill())
-		.pipe(minifyCss())
+        .pipe(myth())
+        .pipe(cssmin())
         .pipe(gulp.dest('./src/css'))
         .pipe(refresh())
         .pipe(debug({ title: 'Debug :' }))
@@ -73,34 +75,10 @@ gulp.task('image-task', function() {
         .on('error', notify.onError("Error: <%= error.message %>"));
 });
 
-<<<<<<< HEAD
 gulp.task('html-task', function() {
     gulp.src('./src/*.html')
         .pipe(changed('./src/', {extension: '.html'}))
         .pipe(gulp.dest('./src/'))
-=======
-gulp.task('css', function() {
-    gulp.src(paths.css)
-        .pipe(refresh())
-});
-
-gulp.task('less', function() {
-    gulp.src('./frontend/css/global.less')
-        .pipe(less())
-        .pipe(autoprefixer())
-        .pipe(gulp.dest('./frontend/css'))
-        .pipe(exec('lessc --rtl ./frontend/css/global.less ./frontend/css/global-rtl.css', options))
-        .pipe(exec.reporter(reportOptions))
-        // .pipe(refresh())
-});
-
-gulp.task('autoprefixer', function() {
-    gulp.src('./frontend/css/global.css')
-        .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('./frontend/css'))
-    gulp.src('./frontend/css/global-rtl.css')
-        .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('./frontend/css'))
         .pipe(refresh())
         .pipe(debug({ title: 'Debug :' }))
         .on('error', notify.onError("Error: <%= error.message %>"));
